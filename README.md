@@ -20,8 +20,10 @@ See `Framework_Kit/Code/00_Readme/README.md`. In short: source the synthetic-dat
 
 ## Citation and versions
 
-Release `v1.0` corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-13.zip`). An archived copy of each release is deposited in Zenodo; cite the DOI shown on the release.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24234654.svg)](https://doi.org/10.5281/zenodo.24234654)
 
-## Licence
+Release `v1.0` (November 14, 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-13.zip`) and is archived in Zenodo: DOI 10.5281/zenodo.24234654. Cite as: Bagwell VP. Research Workflow Framework Kit, v1.0. Zenodo; 2026. https://doi.org/10.5281/zenodo.24234654
 
-MIT — see `Framework_Kit/LICENSE`.
+## License
+
+MIT License — see `Framework_Kit/LICENSE`.
