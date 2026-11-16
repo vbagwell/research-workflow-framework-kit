@@ -1,7 +1,8 @@
 # =====================================================================
 # Framework Kit: integrated research workflow (template)
 # Ported from the originating study's production controls, 2026-11-06
-# Revised: 2026-10-25
+# Revised: 2026-11-16 (baseline copies via repro_baseline_path; a failed copy stops the freeze)
+#          2026-10-25
 # =====================================================================
 
 # =============================================================================
@@ -101,8 +102,10 @@ stamp <- format(Sys.time(), "%Y_%m_%d_%H%M")
 bdir_name <- paste0("BASELINE_FILES_", stamp)
 bdir <- file.path(REPRO_OUTDIR, bdir_name)
 for (f in man$file) {
-  dir.create(dirname(file.path(bdir, f)), recursive = TRUE, showWarnings = FALSE)
-  file.copy(file.path(REPRO_RESULTS, f), file.path(bdir, f), overwrite = TRUE, copy.date = TRUE)
+  dest <- repro_baseline_path(bdir, f)
+  dir.create(dirname(dest), recursive = TRUE, showWarnings = FALSE)
+  ok <- file.copy(file.path(REPRO_RESULTS, f), dest, overwrite = TRUE, copy.date = TRUE)
+  if (!isTRUE(ok)) stop("Baseline copy failed for: ", f, " (destination ", nchar(dest), " characters)")
 }
 if (!is.null(run)) {
   if (!is.null(run$ledger)) utils::write.csv(run$ledger, file.path(REPRO_OUTDIR, paste0("BASELINE_RUN_LEDGER_", stamp, ".csv")), row.names = FALSE)
