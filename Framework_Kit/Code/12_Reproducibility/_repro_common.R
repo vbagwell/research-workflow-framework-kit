@@ -1,7 +1,8 @@
 # =====================================================================
 # Framework Kit: integrated research workflow (template)
 # Ported from the originating study's production controls, 2026-11-06
-# Revised: 2026-10-25
+# Revised: 2026-11-16 (repro_baseline_path: long-path-safe baseline copies)
+#          2026-10-25
 # =====================================================================
 #
 # =============================================================================
@@ -138,6 +139,26 @@ repro_png_dims <- function(path) {
   sig <- readBin(con, "raw", 24)
   if (length(sig) < 24) return(c(NA, NA))
   c(sum(as.integer(sig[17:20]) * 256^(3:0)), sum(as.integer(sig[21:24]) * 256^(3:0)))
+}
+
+# --- Baseline copy path (Windows 260-character path limit) ----------------------
+#     The freeze copies every baseline file under BASELINE_FILES_<stamp>/. On
+#     Windows that prefix can push a long results path past the 260-character
+#     limit, and file.copy() then fails with only a warning. The copy is
+#     therefore stored under a shortened file name when needed: the leading
+#     characters of the name and the extension are kept and a "~" marks the
+#     cut. The manifest keeps the real relative path, so fingerprint comparison
+#     is unaffected; freeze and verify both resolve the copy through this
+#     function.
+repro_baseline_path <- function(bdir, rel, limit = 250L) {
+  p <- file.path(bdir, rel)
+  if (nchar(p) <= limit) return(p)
+  d <- dirname(p); b <- basename(rel); ext <- tools::file_ext(b)
+  stem <- if (nzchar(ext)) substr(b, 1, nchar(b) - nchar(ext) - 1L) else b
+  room <- limit - nchar(d) - 1L - (if (nzchar(ext)) nchar(ext) + 1L else 0L) - 1L
+  if (room < 8L) room <- 8L
+  short <- paste0(substr(stem, 1L, room), "~")
+  file.path(d, if (nzchar(ext)) paste0(short, ".", ext) else short)
 }
 
 # --- Fingerprint one file (path relative to Analysis/Results) -------------------
