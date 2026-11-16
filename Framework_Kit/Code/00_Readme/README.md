@@ -117,6 +117,18 @@ Code/12_Reproducibility writes to Results/14_Reproducibility; the run logs
 are in Results/15_Run_Logs. Every output file has a stable name and is
 rewritten by each run, so runs can be compared file for file.
 
+## Revised 2026-11-16
+Baseline copies are long-path safe. The freeze stores every baseline copy
+under BASELINE_FILES_<stamp>/; on Windows a long results path under that
+prefix can exceed the 260-character limit, and file.copy() then fails with
+only a warning. repro_baseline_path() in 12_Reproducibility/_repro_common.R
+now shortens the stored file name when the full path would exceed 250
+characters (leading characters and extension kept, "~" marks the cut); the
+manifest keeps the real relative path, so fingerprint comparison is
+unchanged. 12_freeze_repro_baseline.R stops on any failed copy instead of
+warning, and 12_verify_reproduction.R reads the copies through the same
+function.
+
 ## Revised 2026-11-06
 The production controls of the originating study were ported into the kit:
 the run logger (03_Preparation/02_logging.R), the fail-stop run_files(), the
