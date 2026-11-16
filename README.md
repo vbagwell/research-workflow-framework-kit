@@ -1,6 +1,6 @@
 # Research Workflow Framework Kit
 
-Companion software for the manuscript *An integrated twelve-step workflow for managing complex research: planning, executing, changing and reporting multi-model studies* (Victor Paul Bagwell, submitted to *BMC Medical Research Methodology*, November 2026).
+Companion software for the manuscript *From research question to publication: an integrated methods workflow for managing complex, multi-model studies* (Victor Paul Bagwell, submitted to *BMC Medical Research Methodology*, November 2026).
 
 The kit is a reduced, generic implementation of the workflow described in the article. It runs end to end on a synthetic dataset with base R alone (openxlsx and sandwich are used when installed) under the same run-logging, baseline-freeze and reproducibility-verification controls as the originating study.
 
@@ -22,7 +22,9 @@ See `Framework_Kit/Code/00_Readme/README.md`. In short: source the synthetic-dat
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24234654.svg)](https://doi.org/10.5281/zenodo.24234654)
 
-Release `v1.0` (November 14, 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-13.zip`) and is archived in Zenodo: DOI 10.5281/zenodo.24234654. Cite as: Bagwell VP. Research Workflow Framework Kit, v1.0. Zenodo; 2026. https://doi.org/10.5281/zenodo.24234654
+Release `v1.1` (November 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-16.zip`). Changes from v1.0: the variable registry of the analysis-plan template carries a causal-role column (exposure, outcome, confounder, mediator, effect modifier, collider, instrument, proxy, descendant of outcome) with the handling rule that follows from each role and a legend of those rules; the reporting-precision worksheet adds a row for predicted and event probabilities (3 decimals, interval limits matched); README path corrected. Zenodo version DOI: [v1.1 version DOI]. Cite as: Bagwell VP. Research Workflow Framework Kit, v1.1. Zenodo; 2026. https://doi.org/[v1.1 version DOI]
+
+Release `v1.0` (November 14, 2026; `Framework_Kit_2026-11-13.zip`) is archived in Zenodo: DOI 10.5281/zenodo.24234654.
 
 ## License
 
