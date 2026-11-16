@@ -20,9 +20,9 @@ See `Framework_Kit/Code/00_Readme/README.md`. In short: source the synthetic-dat
 
 ## Citation and versions
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24234654.svg)](https://doi.org/10.5281/zenodo.24234654)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24293140.svg)](https://doi.org/10.5281/zenodo.24293140)
 
-Release `v1.1` (November 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-16.zip`). Changes from v1.0: the variable registry of the analysis-plan template carries a causal-role column (exposure, outcome, confounder, mediator, effect modifier, collider, instrument, proxy, descendant of outcome) with the handling rule that follows from each role and a legend of those rules; the reporting-precision worksheet adds a row for predicted and event probabilities (3 decimals, interval limits matched); README path corrected. Zenodo version DOI: [v1.1 version DOI]. Cite as: Bagwell VP. Research Workflow Framework Kit, v1.1. Zenodo; 2026. https://doi.org/[v1.1 version DOI]
+Release `v1.1` (November 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-16.zip`). Changes from v1.0: the variable registry of the analysis-plan template carries a causal-role column (exposure, outcome, confounder, mediator, effect modifier, collider, instrument, proxy, descendant of outcome) with the handling rule that follows from each role and a legend of those rules; the reporting-precision worksheet adds a row for predicted and event probabilities (3 decimals, interval limits matched); README path corrected. Zenodo version DOI: 10.5281/zenodo.24293140 (all versions: 10.5281/zenodo.24234653). Cite as: Bagwell VP. Research Workflow Framework Kit, v1.1. Zenodo; 2026. https://doi.org/10.5281/zenodo.24293140
 
 Release `v1.0` (November 14, 2026; `Framework_Kit_2026-11-13.zip`) is archived in Zenodo: DOI 10.5281/zenodo.24234654.
 
