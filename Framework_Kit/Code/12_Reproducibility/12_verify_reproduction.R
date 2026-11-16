@@ -1,7 +1,8 @@
 # =====================================================================
 # Framework Kit: integrated research workflow (template)
 # Ported from the originating study's production controls, 2026-11-06
-# Revised: 2026-10-25
+# Revised: 2026-11-16 (baseline copies read via repro_baseline_path)
+#          2026-10-25
 # =====================================================================
 
 # =============================================================================
@@ -116,7 +117,7 @@ if (is.null(run)) {
 # ---- B. Outputs --------------------------------------------------------------------
 col_letter <- function(n) { s <- ""; while (n > 0) { r <- (n - 1) %% 26; s <- paste0(LETTERS[r + 1], s); n <- (n - 1) %/% 26 }; s }
 xlsx_diff <- function(rel) {
-  old <- if (dir.exists(bdir)) repro_read_xlsx(file.path(bdir, rel)) else NULL
+  old <- if (dir.exists(bdir)) repro_read_xlsx(repro_baseline_path(bdir, rel)) else NULL
   new <- repro_read_xlsx(file.path(REPRO_RESULTS, rel))
   if (is.null(old) || is.null(new)) return("(baseline copy not available for a cell-level comparison)")
   msg <- character(0)
@@ -140,7 +141,7 @@ xlsx_diff <- function(rel) {
 }
 text_diff <- function(rel) {
   if (!dir.exists(bdir)) return("")
-  a <- repro_text_lines(file.path(bdir, rel)); b <- repro_text_lines(file.path(REPRO_RESULTS, rel))
+  a <- repro_text_lines(repro_baseline_path(bdir, rel)); b <- repro_text_lines(file.path(REPRO_RESULTS, rel))
   n <- max(length(a), length(b)); a <- c(a, rep("<none>", n - length(a))); b <- c(b, rep("<none>", n - length(b)))
   d <- which(a != b)
   paste0(length(d), " line(s) differ; first at line ", d[1], ": '", substr(a[d[1]], 1, 80), "' -> '", substr(b[d[1]], 1, 80), "'")
