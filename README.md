@@ -1,6 +1,6 @@
 # Research Workflow Framework Kit
 
-Companion software for the manuscript *From research question to publication: an integrated methods workflow for managing complex, multi-model studies* (Victor Paul Bagwell, submitted to *BMC Medical Research Methodology*, November 2026).
+Companion software for the manuscript *From research question to publication: an integrated workflow for planning, analyzing and reporting complex, multi-model studies* (Victor Paul Bagwell, submitted to *BMC Medical Research Methodology*, November 2026).
 
 The kit is a reduced, generic implementation of the workflow described in the article. It runs end to end on a synthetic dataset with base R alone (openxlsx and sandwich are used when installed) under the same run-logging, baseline-freeze and reproducibility-verification controls as the originating study.
 
