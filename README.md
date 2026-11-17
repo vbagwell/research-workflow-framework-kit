@@ -20,9 +20,13 @@ See `Framework_Kit/Code/00_Readme/README.md`. In short: source the synthetic-dat
 
 ## Citation and versions
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24294039.svg)](https://doi.org/10.5281/zenodo.24294039)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24234653.svg)](https://doi.org/10.5281/zenodo.24234653)
 
-Release `v1.2` (November 2026) corresponds to the archive supplied with the manuscript as Additional file 2 (`Framework_Kit_2026-11-16.zip`). Change from v1.1: baseline copies are long-path safe (`repro_baseline_path()` in `12_Reproducibility/_repro_common.R` shortens a stored copy's file name when the full path would exceed 250 characters; the freeze stops on any failed copy; the verifier reads copies through the same function). Zenodo version DOI: 10.5281/zenodo.24294039 (all versions: 10.5281/zenodo.24234653). Cite as: Bagwell VP. Research Workflow Framework Kit, v1.2. Zenodo; 2026. https://doi.org/10.5281/zenodo.24294039
+The badge is the concept DOI (10.5281/zenodo.24234653), which always resolves to the latest archived release; each release also has its own version DOI, listed below. A release cannot quote its own version DOI (the DOI is minted after the release is cut), so cite the concept DOI or the version DOI of the release you used.
+
+Release `v1.3` (November 17, 2026; `Framework_Kit_2026-11-16.zip`, the archive supplied with the manuscript as Additional file 2) differs from v1.2 only in the manuscript title quoted in the two README files; every R script, template and document is byte-identical to v1.2. Cite as: Bagwell VP. Research Workflow Framework Kit, v1.3. Zenodo; 2026. https://doi.org/10.5281/zenodo.24234653
+
+Release `v1.2` (November 16, 2026; superseded by v1.3 the next day) is archived in Zenodo: DOI 10.5281/zenodo.24294039. Change from v1.1: baseline copies are long-path safe (`repro_baseline_path()` in `12_Reproducibility/_repro_common.R` shortens a stored copy's file name when the full path would exceed 250 characters; the freeze stops on any failed copy; the verifier reads copies through the same function).
 
 Release `v1.1` (November 16, 2026; `Framework_Kit_2026-11-16.zip`, superseded the same day) is archived in Zenodo: DOI 10.5281/zenodo.24293140. Changes from v1.0: the variable registry of the analysis-plan template carries a causal-role column (exposure, outcome, confounder, mediator, effect modifier, collider, instrument, proxy, descendant of outcome) with the handling rule that follows from each role and a legend of those rules; the reporting-precision worksheet adds a row for predicted and event probabilities (3 decimals, interval limits matched); README path corrected.
 
