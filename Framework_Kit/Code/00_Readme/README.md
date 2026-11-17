@@ -1,8 +1,8 @@
 # Framework Kit: integrated research workflow (template)
 
 This is the reduced, generic version of the workflow described in the paper
-"From research question to publication: an integrated methods workflow for
-managing complex, multi-model studies". It runs end to end on a synthetic dataset with base R alone, and uses openxlsx and sandwich when they
+"From research question to publication: an integrated workflow for
+planning, analyzing and reporting complex, multi-model studies". It runs end to end on a synthetic dataset with base R alone, and uses openxlsx and sandwich when they
 are installed (one workbook per aim with one worksheet per model, and
 sandwich::vcovCL for the cluster-robust covariance).
 
